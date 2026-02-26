@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roberto & Emmily</title>
+
 <link rel="stylesheet" href="styles.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,106 +20,70 @@
   </div>
 </section>
 
-<!-- FRASE -->
-<section class="quote">
-  <p>
-    “Después de tantos momentos compartidos, 
-    elegimos comenzar nuestro para siempre.”
-  </p>
-</section>
-
 <!-- CONTADOR -->
 <section class="countdown">
   <h2>Faltan</h2>
-  <div id="timer"></div>
+  <div id="timer">
+    <div class="time-box">
+      <span id="days">00</span>
+      <small>Días</small>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <small>Horas</small>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <small>Min</small>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <small>Seg</small>
+    </div>
+  </div>
 </section>
 
 <!-- CEREMONIA -->
-<section>
+<section class="details">
   <h2>Ceremonia</h2>
-  <div class="venue-card">
+  <div class="card">
     <img src="assets/templo.png" alt="Parroquia de Santiago Apóstol">
     <h3>Parroquia de Santiago Apóstol</h3>
-    <a href="https://maps.app.goo.gl/rHZSPj5XKncTr1TS9" target="_blank" class="btn-map">
-      Ver ubicación
-    </a>
+    <p>4:00 PM</p>
+    <a href="https://maps.app.goo.gl/rHZSPj5XKncTr1TS9" target="_blank" class="btn">Ver ubicación</a>
   </div>
 </section>
 
 <!-- RECEPCIÓN -->
-<section>
+<section class="venue">
   <h2>Recepción</h2>
-  <div class="venue-card">
+  <div class="card">
     <img src="assets/salon.png" alt="Terraza Jardín Veranda">
     <h3>Terraza Jardín Veranda</h3>
-    <a href="https://maps.app.goo.gl/xWZNmHdBtumQkgLq5" target="_blank" class="btn-map">
-      Ver ubicación
-    </a>
+    <p>6:00 PM</p>
+    <a href="https://maps.app.goo.gl/xWZNmHdBtumQkgLq5" target="_blank" class="btn">Ver ubicación</a>
   </div>
 </section>
 
-<!-- ITINERARIO -->
-<section class="schedule">
-  <h2>Itinerario</h2>
-
-  <div class="schedule-item">
-    <span>17:00</span>
-    <p>Ceremonia</p>
-  </div>
-
-  <div class="schedule-item">
-    <span>18:30</span>
-    <p>Recepción</p>
-  </div>
-
-  <div class="schedule-item">
-    <span>19:30</span>
-    <p>Cena</p>
-  </div>
-
-  <div class="schedule-item">
-    <span>21:00</span>
-    <p>Baile</p>
-  </div>
-</section>
-
-<!-- CÓDIGO DE VESTIMENTA -->
-<section class="dresscode">
+<!-- DRESS CODE -->
+<section class="info">
   <h2>Código de Vestimenta</h2>
-  <p class="highlight">Formal</p>
-  <p>Nos encantará verte elegante para celebrar este día tan especial.</p>
+  <p>Formal</p>
 </section>
 
-<!-- SOLO ADULTOS -->
-<section class="adults">
-  <p>
-    Aunque amamos a los pequeños, esta celebración será exclusivamente para adultos.
-  </p>
-</section>
-
-<!-- HASHTAG -->
-<section class="hashtag">
-  <p>Comparte tus fotos con</p>
-  <h3>#RobertoYEmmily</h3>
+<!-- ADULTS ONLY -->
+<section class="info">
+  <h2>Evento solo para adultos</h2>
+  <p>Amamos a los pequeños, pero esta celebración será solo para mayores de edad.</p>
 </section>
 
 <!-- MESA DE REGALOS -->
 <section class="gifts">
   <h2>Mesa de Regalos</h2>
-  <p>
-    Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo más,
-    aquí encontrarás algunas opciones.
-  </p>
-  <a href="#">Amazon</a>
-  <a href="#">Liverpool</a>
-</section>
-
-<!-- MENSAJE FINAL -->
-<section class="final-message">
-  <p>
-    Gracias por ser parte de nuestra historia.
-    No imaginamos este día sin ti.
-  </p>
+  <div class="gift-links">
+    <a href="#">Amazon</a>
+    <a href="#">Liverpool</a>
+  </div>
 </section>
 
 <!-- RSVP -->
@@ -128,15 +93,39 @@
     <input type="text" placeholder="Nombre completo" required>
     <select required>
       <option value="">¿Asistirás?</option>
-      <option value="Sí">Sí asistiré</option>
-      <option value="No">No podré asistir</option>
+      <option>Sí asistiré</option>
+      <option>No podré asistir</option>
     </select>
     <input type="number" placeholder="Número de acompañantes">
     <button type="submit">Confirmar</button>
   </form>
 </section>
 
-<script src="script.js"></script>
+<footer>
+  <p>Con amor, Roberto & Emmily 🤍</p>
+</footer>
+
+<script>
+const weddingDate = new Date("April 18, 2026 00:00:00").getTime();
+
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+</script>
+
 </body>
 </html>
+
 
