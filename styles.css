@@ -112,4 +112,42 @@ input, select {
   letter-spacing: 1px;
   color: #777;
 }
+.venue {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.venue-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.venue-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;   /* esto evita deformación */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.venue-card h3 {
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.btn-map {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.btn-map:hover {
+  background: black;
+  color: white;
+}
 
