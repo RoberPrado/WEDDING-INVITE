@@ -13,10 +13,10 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="overlay">
+  <div class="hero-content">
     <h1>Roberto & Emmily</h1>
     <p class="sub">Nos casamos</p>
-    <p class="date">18 Abril 2026</p>
+    <p class="date">18 · Abril · 2026</p>
   </div>
 </section>
 
@@ -24,30 +24,18 @@
 <section class="countdown">
   <h2>Faltan</h2>
   <div id="timer">
-    <div class="time-box">
-      <span id="days">00</span>
-      <small>Días</small>
-    </div>
-    <div class="time-box">
-      <span id="hours">00</span>
-      <small>Horas</small>
-    </div>
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <small>Min</small>
-    </div>
-    <div class="time-box">
-      <span id="seconds">00</span>
-      <small>Seg</small>
-    </div>
+    <div class="time-box"><span id="days">00</span><small>Días</small></div>
+    <div class="time-box"><span id="hours">00</span><small>Horas</small></div>
+    <div class="time-box"><span id="minutes">00</span><small>Min</small></div>
+    <div class="time-box"><span id="seconds">00</span><small>Seg</small></div>
   </div>
 </section>
 
 <!-- CEREMONIA -->
-<section class="details">
+<section class="section-light">
   <h2>Ceremonia</h2>
   <div class="card">
-    <img src="assets/templo.png" alt="Parroquia de Santiago Apóstol">
+    <img src="assets/templo.png" alt="Parroquia">
     <h3>Parroquia de Santiago Apóstol</h3>
     <p>4:00 PM</p>
     <a href="https://maps.app.goo.gl/rHZSPj5XKncTr1TS9" target="_blank" class="btn">Ver ubicación</a>
@@ -55,41 +43,29 @@
 </section>
 
 <!-- RECEPCIÓN -->
-<section class="venue">
+<section class="section-dark">
   <h2>Recepción</h2>
   <div class="card">
-    <img src="assets/salon.png" alt="Terraza Jardín Veranda">
+    <img src="assets/salon.png" alt="Salón">
     <h3>Terraza Jardín Veranda</h3>
     <p>6:00 PM</p>
-    <a href="https://maps.app.goo.gl/xWZNmHdBtumQkgLq5" target="_blank" class="btn">Ver ubicación</a>
+    <a href="https://maps.app.goo.gl/xWZNmHdBtumQkgLq5" target="_blank" class="btn btn-light">Ver ubicación</a>
   </div>
 </section>
 
-<!-- DRESS CODE -->
-<section class="info">
+<!-- INFO -->
+<section class="section-light">
   <h2>Código de Vestimenta</h2>
-  <p>Formal</p>
-</section>
+  <p class="highlight">Formal</p>
 
-<!-- ADULTS ONLY -->
-<section class="info">
-  <h2>Evento solo para adultos</h2>
+  <h2 style="margin-top:60px;">Evento solo adultos</h2>
   <p>Amamos a los pequeños, pero esta celebración será solo para mayores de edad.</p>
 </section>
 
-<!-- MESA DE REGALOS -->
-<section class="gifts">
-  <h2>Mesa de Regalos</h2>
-  <div class="gift-links">
-    <a href="#">Amazon</a>
-    <a href="#">Liverpool</a>
-  </div>
-</section>
-
 <!-- RSVP -->
-<section class="rsvp">
+<section class="section-dark">
   <h2>Confirmar Asistencia</h2>
-  <form id="rsvpForm">
+  <form>
     <input type="text" placeholder="Nombre completo" required>
     <select required>
       <option value="">¿Asistirás?</option>
@@ -102,30 +78,26 @@
 </section>
 
 <footer>
-  <p>Con amor, Roberto & Emmily 🤍</p>
+  <p>Con amor, Roberto & Emmily</p>
 </footer>
 
 <script>
 const weddingDate = new Date("April 18, 2026 00:00:00").getTime();
 
-const timer = setInterval(function() {
+setInterval(() => {
   const now = new Date().getTime();
   const distance = weddingDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-
+  document.getElementById("days").innerHTML =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerHTML =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("minutes").innerHTML =
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("seconds").innerHTML =
+    Math.floor((distance % (1000 * 60)) / 1000);
 }, 1000);
 </script>
 
 </body>
 </html>
-
-
