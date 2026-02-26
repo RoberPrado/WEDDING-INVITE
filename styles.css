@@ -195,4 +195,8 @@ footer {
   background: #c6a75e;
   margin: 60px auto 0;
 }
+.time-box span {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+}
 
