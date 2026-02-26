@@ -1,136 +1,60 @@
-/* ===================== */
-/* ESTILOS GENERALES */
-/* ===================== */
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #ffffff;
-  color: #333;
+  color: #111;
   text-align: center;
+  line-height: 1.6;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  margin: 0;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  margin-top: 60px;
-  font-weight: 600;
-}
-
-h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-a {
-  text-decoration: none;
-  color: #b48a78;
-  transition: 0.3s;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-button {
-  background: #b48a78;
-  border: none;
-  padding: 12px 24px;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-input, select {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-/* ===================== */
 /* HERO */
-/* ===================== */
 
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover no-repeat;
+  background: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.overlay {
-  background: rgba(255,255,255,0.85);
-  padding: 40px;
-  border-radius: 10px;
+.overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .sub {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
 }
 
 .date {
-  font-size: 1rem;
-  letter-spacing: 2px;
   margin-top: 10px;
+  font-size: 1rem;
 }
 
-/* ===================== */
-/* COUNTDOWN */
-/* ===================== */
+/* SECCIONES */
 
-.countdown {
-  padding: 60px 20px;
+section {
+  padding: 90px 20px;
 }
 
-#timer {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.time-box {
-  background: #fff;
-  padding: 20px 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  min-width: 90px;
-}
-
-.time-box span {
-  font-size: 2rem;
+h2 {
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
-  display: block;
+  margin-bottom: 40px;
 }
 
-.time-box small {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  color: #777;
+/* FRASE */
+
+.quote {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
 }
 
-/* ===================== */
-/* VENUE (SALÓN) */
-/* ===================== */
-
-.venue {
-  padding: 60px 20px;
-}
+/* VENUE CARDS */
 
 .venue-card {
   max-width: 600px;
@@ -139,72 +63,95 @@ input, select {
 
 .venue-card img {
   width: 100%;
-  height: 350px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease;
-}
-
-.venue-card img:hover {
-  transform: scale(1.03);
+  border-radius: 10px;
 }
 
 .venue-card h3 {
   margin-top: 20px;
-  font-weight: 600;
+  font-family: 'Playfair Display', serif;
 }
 
 .btn-map {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 25px;
-  border: 1px solid #000;
-  color: black;
+  border: 1px solid #111;
+  text-decoration: none;
+  color: #111;
   transition: 0.3s;
 }
 
 .btn-map:hover {
-  background: black;
+  background: #111;
   color: white;
 }
 
-/* ===================== */
-/* STORY */
-/* ===================== */
+/* ITINERARIO */
 
-.story {
-  padding: 60px 20px;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.6;
+.schedule-item {
+  margin: 20px 0;
 }
 
-/* ===================== */
+.schedule-item span {
+  font-weight: 600;
+}
+
+/* VESTIMENTA */
+
+.highlight {
+  letter-spacing: 2px;
+  margin: 15px 0;
+}
+
+/* ADULTOS */
+
+.adults {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* HASHTAG */
+
+.hashtag h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 10px;
+}
+
 /* GIFTS */
-/* ===================== */
-
-.gifts {
-  padding: 60px 20px;
-}
 
 .gifts a {
-  display: inline-block;
-  margin: 10px 15px;
-  border-bottom: 1px solid #b48a78;
+  display: block;
+  margin: 10px;
+  text-decoration: none;
+  color: #111;
 }
 
-/* ===================== */
 /* RSVP */
-/* ===================== */
 
-.rsvp {
-  padding: 60px 20px;
-  background: #fafafa;
+.rsvp input,
+.rsvp select {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 260px;
+  border: 1px solid #ddd;
 }
 
-#responseMessage {
-  margin-top: 15px;
-  font-weight: 500;
+.rsvp button {
+  padding: 12px 30px;
+  border: 1px solid #111;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.rsvp button:hover {
+  background: #111;
+  color: white;
+}
+
 
