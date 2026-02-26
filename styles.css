@@ -186,3 +186,13 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+.section-light::after,
+.section-dark::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #c6a75e;
+  margin: 60px auto 0;
+}
+
