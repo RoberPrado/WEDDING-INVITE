@@ -18,7 +18,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
   const attendance = document.getElementById("attendance").value;
   const guests = document.getElementById("guests").value;
 
-  fetch("AQUI_VA_TU_URL_DE_GOOGLE_SCRIPT", {
+  fetch("https://script.google.com/macros/s/AKfycby3D1oqEXatwv16jh6zsYyckJve9YfKgfAeK_XkGVT4dhHaPsVTtWLk0IG88dfjouvQxQ/exec", {
     method: "POST",
     body: JSON.stringify({
       name: name,
