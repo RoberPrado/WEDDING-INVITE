@@ -1,34 +1,41 @@
-// CONTADOR
-const weddingDate = new Date("October 15, 2026 18:00:00").getTime();
+// Fecha de la boda (AÑO, MES-1, DÍA, HORA, MINUTO)
+const weddingDate = new Date("April 18, 2026 17:00:00").getTime();
 
-setInterval(() => {
+const timer = document.getElementById("timer");
+
+const countdown = setInterval(function () {
+
   const now = new Date().getTime();
   const distance = weddingDate - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("timer").innerHTML = days + " días";
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  timer.innerHTML = `
+    <div class="time-box">
+      <span>${days}</span>
+      <small>Días</small>
+    </div>
+    <div class="time-box">
+      <span>${hours}</span>
+      <small>Horas</small>
+    </div>
+    <div class="time-box">
+      <span>${minutes}</span>
+      <small>Min</small>
+    </div>
+    <div class="time-box">
+      <span>${seconds}</span>
+      <small>Seg</small>
+    </div>
+  `;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    timer.innerHTML = "¡Es el gran día!";
+  }
+
 }, 1000);
-
-
-// VALIDACIÓN SIMPLE + ENVÍO
-document.getElementById("rsvpForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const attendance = document.getElementById("attendance").value;
-  const guests = document.getElementById("guests").value;
-
-  fetch("https://script.google.com/macros/s/AKfycby3D1oqEXatwv16jh6zsYyckJve9YfKgfAeK_XkGVT4dhHaPsVTtWLk0IG88dfjouvQxQ/exec", {
-    method: "POST",
-    body: JSON.stringify({
-      name: name,
-      attendance: attendance,
-      guests: guests
-    })
-  })
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("responseMessage").innerText = "Gracias por confirmar 💍";
-  });
-});
 
