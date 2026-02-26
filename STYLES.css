@@ -1,1 +1,54 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #333;
+  text-align: center;
+}
+
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(255,255,255,0.8);
+  padding: 40px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 60px;
+}
+
+a {
+  display: block;
+  margin: 10px;
+  color: #b48a78;
+  text-decoration: none;
+}
+
+button {
+  background: #b48a78;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
 
