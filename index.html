@@ -6,10 +6,11 @@
 <title>Roberto & Emmily</title>
 <link rel="stylesheet" href="styles.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero">
   <div class="overlay">
     <h1>Roberto & Emmily</h1>
@@ -18,69 +19,122 @@
   </div>
 </section>
 
+<!-- FRASE -->
+<section class="quote">
+  <p>
+    “Después de tantos momentos compartidos, 
+    elegimos comenzar nuestro para siempre.”
+  </p>
+</section>
+
+<!-- CONTADOR -->
 <section class="countdown">
   <h2>Faltan</h2>
   <div id="timer"></div>
 </section>
 
-<section class="details">
+<!-- CEREMONIA -->
+<section>
   <h2>Ceremonia</h2>
-
   <div class="venue-card">
     <img src="assets/templo.png" alt="Parroquia de Santiago Apóstol">
-
     <h3>Parroquia de Santiago Apóstol</h3>
-
     <a href="https://maps.app.goo.gl/rHZSPj5XKncTr1TS9" target="_blank" class="btn-map">
       Ver ubicación
     </a>
   </div>
 </section>
 
-<section class="venue">
+<!-- RECEPCIÓN -->
+<section>
   <h2>Recepción</h2>
-
   <div class="venue-card">
     <img src="assets/salon.png" alt="Terraza Jardín Veranda">
-
     <h3>Terraza Jardín Veranda</h3>
-
     <a href="https://maps.app.goo.gl/xWZNmHdBtumQkgLq5" target="_blank" class="btn-map">
       Ver ubicación
     </a>
   </div>
 </section>
 
+<!-- ITINERARIO -->
+<section class="schedule">
+  <h2>Itinerario</h2>
 
-<section class="story">
-  <h2>Nuestra Historia</h2>
-  <p>Aquí puedes contar cómo se conocieron...</p>
+  <div class="schedule-item">
+    <span>17:00</span>
+    <p>Ceremonia</p>
+  </div>
+
+  <div class="schedule-item">
+    <span>18:30</span>
+    <p>Recepción</p>
+  </div>
+
+  <div class="schedule-item">
+    <span>19:30</span>
+    <p>Cena</p>
+  </div>
+
+  <div class="schedule-item">
+    <span>21:00</span>
+    <p>Baile</p>
+  </div>
 </section>
 
+<!-- CÓDIGO DE VESTIMENTA -->
+<section class="dresscode">
+  <h2>Código de Vestimenta</h2>
+  <p class="highlight">Formal</p>
+  <p>Nos encantará verte elegante para celebrar este día tan especial.</p>
+</section>
+
+<!-- SOLO ADULTOS -->
+<section class="adults">
+  <p>
+    Aunque amamos a los pequeños, esta celebración será exclusivamente para adultos.
+  </p>
+</section>
+
+<!-- HASHTAG -->
+<section class="hashtag">
+  <p>Comparte tus fotos con</p>
+  <h3>#RobertoYEmmily</h3>
+</section>
+
+<!-- MESA DE REGALOS -->
 <section class="gifts">
   <h2>Mesa de Regalos</h2>
+  <p>
+    Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo más,
+    aquí encontrarás algunas opciones.
+  </p>
   <a href="#">Amazon</a>
   <a href="#">Liverpool</a>
 </section>
 
+<!-- MENSAJE FINAL -->
+<section class="final-message">
+  <p>
+    Gracias por ser parte de nuestra historia.
+    No imaginamos este día sin ti.
+  </p>
+</section>
+
+<!-- RSVP -->
 <section class="rsvp">
   <h2>Confirmar Asistencia</h2>
   <form id="rsvpForm">
-    <input type="text" id="name" placeholder="Nombre completo" required>
-    <select id="attendance" required>
+    <input type="text" placeholder="Nombre completo" required>
+    <select required>
       <option value="">¿Asistirás?</option>
       <option value="Sí">Sí asistiré</option>
       <option value="No">No podré asistir</option>
     </select>
-    <input type="number" id="guests" placeholder="Número de acompañantes">
+    <input type="number" placeholder="Número de acompañantes">
     <button type="submit">Confirmar</button>
   </form>
-  <p id="responseMessage"></p>
 </section>
-
-<audio id="music" autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
-</audio>
 
 <script src="script.js"></script>
 </body>
