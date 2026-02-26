@@ -39,3 +39,32 @@ const countdown = setInterval(function () {
 
 }, 1000);
 
+// 💌 FORMULARIO A GOOGLE SHEETS
+// =============================
+
+// 👇 PEGA AQUÍ TU URL DE GOOGLE APPS SCRIPT
+const scriptURL = "https://script.google.com/macros/s/AKfycby3D1oqEXatwv16jh6zsYyckJve9YfKgfAeK_XkGVT4dhHaPsVTtWLk0IG88dfjouvQxQ/exec";
+
+document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    attendance: document.getElementById("attendance").value,
+    guests: document.getElementById("guests").value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    document.getElementById("responseMessage").innerText =
+      "Gracias por confirmar asistencia 💍";
+    document.getElementById("rsvpForm").reset();
+  })
+  .catch(error => {
+    console.error("Error!", error.message);
+  });
+});
+
