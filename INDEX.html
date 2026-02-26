@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roberto & [Nombre]</title>
+<link rel="stylesheet" href="styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="hero">
+  <div class="overlay">
+    <h1>Roberto & [Nombre]</h1>
+    <p class="sub">Nos casamos</p>
+    <p class="date">15 Octubre 2026</p>
+  </div>
+</section>
+
+<section class="countdown">
+  <h2>Faltan</h2>
+  <div id="timer"></div>
+</section>
+
+<section class="details">
+  <h2>Ceremonia</h2>
+  <p>Iglesia San José</p>
+  <a href="https://maps.google.com" target="_blank">Ver ubicación</a>
+
+  <h2>Recepción</h2>
+  <p>Salón Los Olivos</p>
+  <a href="https://maps.google.com" target="_blank">Ver ubicación</a>
+</section>
+
+<section class="story">
+  <h2>Nuestra Historia</h2>
+  <p>Aquí puedes contar cómo se conocieron...</p>
+</section>
+
+<section class="gifts">
+  <h2>Mesa de Regalos</h2>
+  <a href="#">Amazon</a>
+  <a href="#">Liverpool</a>
+</section>
+
+<section class="rsvp">
+  <h2>Confirmar Asistencia</h2>
+  <form id="rsvpForm">
+    <input type="text" id="name" placeholder="Nombre completo" required>
+    <select id="attendance" required>
+      <option value="">¿Asistirás?</option>
+      <option value="Sí">Sí asistiré</option>
+      <option value="No">No podré asistir</option>
+    </select>
+    <input type="number" id="guests" placeholder="Número de acompañantes">
+    <button type="submit">Confirmar</button>
+  </form>
+  <p id="responseMessage"></p>
+</section>
+
+<audio id="music" autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
 
