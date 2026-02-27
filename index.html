@@ -125,5 +125,27 @@ window.addEventListener('scroll', showOnScroll);
 showOnScroll();
 </script>
 
+// 👇 PEGA AQUÍ TU URL DE GOOGLE APPS SCRIPT
+const scriptURL = "https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec";
+
+document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("attendance", document.getElementById("attendance").value);
+  formData.append("guests", document.getElementById("guests").value);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(() => {
+    document.getElementById("responseMessage").innerText =
+      "Gracias por confirmar asistencia 💍";
+    document.getElementById("rsvpForm").reset();
+  })
+  .catch(error => console.error("Error:", error));
+});
 </body>
 </html>
