@@ -43,7 +43,7 @@ const countdown = setInterval(function () {
 // =============================
 
 // 👇 PEGA AQUÍ TU URL DE GOOGLE APPS SCRIPT
-const scriptURL = "https://script.google.com/macros/s/AKfycby3D1oqEXatwv16jh6zsYyckJve9YfKgfAeK_XkGVT4dhHaPsVTtWLk0IG88dfjouvQxQ/exec";
+const scriptURL = "https://script.google.com/macros/library/d/1i80cewYg4F2UeviGUcXl6dtqXNsxFjCi1FNPhvUKoeHkTIi9mFdLE8e2/1";
 
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
