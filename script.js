@@ -43,32 +43,25 @@ const countdown = setInterval(function () {
 // =============================
 
 // 👇 PEGA AQUÍ TU URL DE GOOGLE APPS SCRIPT
-const scriptURL = "https://script.google.com/macros/library/d/1i80cewYg4F2UeviGUcXl6dtqXNsxFjCi1FNPhvUKoeHkTIi9mFdLE8e2/1";
+const scriptURL = "https://script.google.com/a/macros/grupogaranon.com/s/AKfycbybAcAe525ldp-pXXBtpBb29CJcKwA3dN6pBnH1onNR1dRLIlJqsjU__MdnAPsWUjACbQ/exec";
 
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    attendance: document.getElementById("attendance").value,
-    guests: document.getElementById("guests").value
-  };
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("attendance", document.getElementById("attendance").value);
+  formData.append("guests", document.getElementById("guests").value);
 
   fetch(scriptURL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
+    body: formData
   })
-  .then(response => response.text())
-  .then(result => {
+  .then(() => {
     document.getElementById("responseMessage").innerText =
       "Gracias por confirmar asistencia 💍";
     document.getElementById("rsvpForm").reset();
   })
-  .catch(error => {
-    console.error("Error!", error.message);
-  });
+  .catch(error => console.error("Error:", error));
 });
 
