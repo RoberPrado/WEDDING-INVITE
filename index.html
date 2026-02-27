@@ -68,21 +68,29 @@
 <section class="section-dark fade-in">
   <h2>Confirmar Asistencia</h2>
 
-  <form id="rsvpForm">
-    <input type="text" id="name" placeholder="Nombre completo" required>
+  <form 
+    action="https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted=true;"
+  >
+    <input type="text" name="name" placeholder="Nombre completo" required>
 
-    <select id="attendance" required>
+    <select name="attendance" required>
       <option value="">¿Asistirás?</option>
       <option value="Sí asistiré">Sí asistiré</option>
       <option value="No podré asistir">No podré asistir</option>
     </select>
 
-    <input type="number" id="guests" placeholder="Número de acompañantes">
+    <input type="number" name="guests" placeholder="Número de acompañantes">
 
     <button type="submit">Confirmar</button>
   </form>
 
-  <p id="responseMessage" style="margin-top:20px;"></p>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <p id="msg" style="margin-top:20px;"></p>
+</section>
 </section>
 
 <footer>
@@ -146,6 +154,14 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     document.getElementById("rsvpForm").reset();
   })
   .catch(error => console.error("Error:", error));
+});
+</script>
+  <script>
+var submitted = false;
+
+document.querySelector("form").addEventListener("submit", function() {
+  document.getElementById("msg").innerText =
+    "Gracias por confirmar asistencia 💍";
 });
 </script>
 </body>
