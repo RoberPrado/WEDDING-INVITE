@@ -43,7 +43,7 @@ const countdown = setInterval(function () {
 // =============================
 
 // 👇 PEGA AQUÍ TU URL DE GOOGLE APPS SCRIPT
-const scriptURL = "https://script.google.com/a/macros/grupogaranon.com/s/AKfycbybAcAe525ldp-pXXBtpBb29CJcKwA3dN6pBnH1onNR1dRLIlJqsjU__MdnAPsWUjACbQ/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec";
 
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
