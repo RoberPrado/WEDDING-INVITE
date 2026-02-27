@@ -67,16 +67,22 @@
 <!-- RSVP -->
 <section class="section-dark fade-in">
   <h2>Confirmar Asistencia</h2>
-  <form>
-    <input type="text" placeholder="Nombre completo" required>
-    <select required>
+
+  <form id="rsvpForm">
+    <input type="text" id="name" placeholder="Nombre completo" required>
+
+    <select id="attendance" required>
       <option value="">¿Asistirás?</option>
-      <option>Sí asistiré</option>
-      <option>No podré asistir</option>
+      <option value="Sí asistiré">Sí asistiré</option>
+      <option value="No podré asistir">No podré asistir</option>
     </select>
-    <input type="number" placeholder="Número de acompañantes">
+
+    <input type="number" id="guests" placeholder="Número de acompañantes">
+
     <button type="submit">Confirmar</button>
   </form>
+
+  <p id="responseMessage" style="margin-top:20px;"></p>
 </section>
 
 <footer>
