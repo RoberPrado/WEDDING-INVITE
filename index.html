@@ -91,7 +91,6 @@
 
   <p id="msg" style="margin-top:20px;"></p>
 </section>
-</section>
 
 <footer>
   <p>Con amor, Roberto & Emmily</p>
@@ -133,35 +132,19 @@ window.addEventListener('scroll', showOnScroll);
 showOnScroll();
 </script>
 
+
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec";
+document.addEventListener("DOMContentLoaded", function() {
 
-document.getElementById("rsvpForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+  var form = document.querySelector("form");
+  var msg = document.getElementById("msg");
 
-  const formData = new FormData();
-  formData.append("name", document.getElementById("name").value);
-  formData.append("attendance", document.getElementById("attendance").value);
-  formData.append("guests", document.getElementById("guests").value);
+  if (form) {
+    form.addEventListener("submit", function() {
+      msg.innerText = "Gracias por confirmar asistencia 💍";
+    });
+  }
 
-  fetch(scriptURL, {
-    method: "POST",
-    body: formData
-  })
-  .then(() => {
-    document.getElementById("responseMessage").innerText =
-      "Gracias por confirmar asistencia 💍";
-    document.getElementById("rsvpForm").reset();
-  })
-  .catch(error => console.error("Error:", error));
-});
-</script>
-  <script>
-var submitted = false;
-
-document.querySelector("form").addEventListener("submit", function() {
-  document.getElementById("msg").innerText =
-    "Gracias por confirmar asistencia 💍";
 });
 </script>
 </body>
