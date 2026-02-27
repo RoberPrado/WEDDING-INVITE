@@ -56,9 +56,13 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
 
   fetch(scriptURL, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(data)
   })
-  .then(response => {
+  .then(response => response.text())
+  .then(result => {
     document.getElementById("responseMessage").innerText =
       "Gracias por confirmar asistencia 💍";
     document.getElementById("rsvpForm").reset();
