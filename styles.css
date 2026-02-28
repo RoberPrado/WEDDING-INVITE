@@ -368,3 +368,32 @@ footer {
   }
 
 }
+/* Quitar estilo de cuadros en móvil */
+.timeline-content {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 5px 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Hacer texto más compacto */
+.timeline-content h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Imagen más pequeña y limpia */
+.timeline-img img {
+  width: 110px;
+  border-radius: 8px;
+}
+
+/* Reducir espacio entre items */
+.timeline-item {
+  margin-bottom: 25px;
+}
