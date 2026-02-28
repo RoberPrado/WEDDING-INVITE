@@ -220,7 +220,10 @@ footer {
   display: block;
   border-radius: 6px;
 }
+/* ========================= */
 /* TIMELINE SECTION */
+/* ========================= */
+
 .timeline-section {
   padding: 100px 20px;
   background: #f9f9f9;
@@ -229,15 +232,15 @@ footer {
 
 .timeline {
   position: relative;
-  max-width: 1000px;
-  margin: 60px auto;
+  max-width: 1100px;
+  margin: 80px auto;
 }
 
 /* Línea central */
 .timeline::before {
   content: "";
   position: absolute;
-  width: 3px;
+  width: 2px;
   background: #d4af37;
   top: 0;
   bottom: 0;
@@ -248,72 +251,10 @@ footer {
 /* Item */
 .timeline-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 70px 0;
+  justify-content: space-between;
+  margin: 80px 0;
   position: relative;
-}
-
-/* Circulito en la línea */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #d4af37;
-  border-radius: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-/* Proporciones */
-.timeline-img {
-  width: 35%;
-  display: flex;
-  justify-content: center;
-}
-
-.timeline-content {
-  width: 45%;
-  background: white;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-/* Imágenes más pequeñas */
-.timeline-img img {
-  width: 200px;     /* 🔥 aquí controlas tamaño */
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-/* Texto */
-.timeline-content h3 {
-  margin-bottom: 10px;
-  font-size: 22px;
-}
-
-.timeline-content p {
-  font-size: 18px;
-  color: #666;
-}
-.timeline-content {
-  background: white;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  position: relative;
-}
-/* Separación del centro */
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-left: 40px;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-  margin-right: 40px;
 }
 
 /* Alternar lados */
@@ -321,79 +262,106 @@ footer {
   flex-direction: row-reverse;
 }
 
+/* Punto */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d4af37;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Imagen */
+.timeline-img {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-img img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Contenido */
+.timeline-content {
+  width: 40%;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+/* Separación respecto al centro */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 50px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: 50px;
+}
+
+/* Texto */
+.timeline-content h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+}
+
 /* ========================= */
-/* RESPONSIVE TIMELINE */
+/* RESPONSIVE */
 /* ========================= */
 
 @media (max-width: 768px) {
 
-  /* Línea ligeramente a la izquierda */
+  /* Quitamos línea */
   .timeline::before {
-    left: 30px;
-    transform: none;
+    display: none;
   }
 
-  /* Cada item en columna */
   .timeline-item {
     flex-direction: column !important;
-    align-items: flex-start;
-    margin-left: 70px;
-    text-align: left;
+    text-align: center;
+    margin: 60px 0;
   }
 
-  /* Punto alineado con línea */
+  /* Punto arriba */
   .timeline-item::before {
-    left: 30px;
+    position: relative;
+    left: auto;
     transform: none;
+    margin-bottom: 20px;
   }
 
-  /* Imagen y texto ancho completo */
   .timeline-img,
   .timeline-content {
     width: 100%;
   }
 
   .timeline-img {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .timeline-img img {
-    width: 150px;
+    max-width: 240px;
   }
 
-  /* Quitamos márgenes laterales de desktop */
-  .timeline-item:nth-child(odd) .timeline-content,
-  .timeline-item:nth-child(even) .timeline-content {
-    margin: 0;
+  .timeline-content {
+    background: none;
+    box-shadow: none;
+    padding: 0 10px;
   }
 
-}
-/* Quitar estilo de cuadros en móvil */
-.timeline-content {
-  background: none !important;
-  box-shadow: none !important;
-  padding: 5px 0 !important;
-  border-radius: 0 !important;
-}
-
-/* Hacer texto más compacto */
-.timeline-content h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.timeline-content p {
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-/* Imagen más pequeña y limpia */
-.timeline-img img {
-  width: 110px;
-  border-radius: 8px;
-}
-
-/* Reducir espacio entre items */
-.timeline-item {
-  margin-bottom: 25px;
 }
