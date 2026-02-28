@@ -338,20 +338,7 @@ footer {
   .timeline::before {
     display: none;
   }
-  .love-quote {
-    font-size: 28px;
-  }
 
-  .love-gallery img {
-    width: 90%;
-    height: auto;
-  }
-
-  .love-letter {
-    font-size: 16px;
-  }
-
-}
   .timeline-item {
     flex-direction: column !important;
     align-items: center;
@@ -401,6 +388,20 @@ footer {
 
   .timeline-content p {
     font-size: 14px;
+  }
+
+}
+  .love-quote {
+    font-size: 28px;
+  }
+
+  .love-gallery img {
+    width: 90%;
+    height: auto;
+  }
+
+  .love-letter {
+    font-size: 16px;
   }
 
 }
