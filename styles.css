@@ -324,22 +324,23 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
 
+  /* Línea al centro */
   .timeline::before {
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .timeline-item {
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: 25px;
+    align-items: center;
+    text-align: center;
+    margin-left: 0;
   }
-.timeline-item:nth-child(odd) .timeline-content,
-.timeline-item:nth-child(even) .timeline-content {
-  margin: 0;
-}
+
+  /* Punto centrado */
   .timeline-item::before {
-    left: 10px;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .timeline-img,
@@ -348,8 +349,16 @@ footer {
   }
 
   .timeline-img {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
+
+  /* Quitamos márgenes de desktop */
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin: 0;
+  }
+
+}
 
   .timeline-img img {
     width: 160px;
