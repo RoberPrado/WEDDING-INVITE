@@ -276,21 +276,23 @@ footer {
 }
 
 /* ========================= */
-/* IMAGEN */
+/* IMAGEN MEJORADA */
 /* ========================= */
 
 .timeline-img {
   width: 35%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .timeline-img img {
-  width: 220px;
-  height: 220px;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;   /* Siempre cuadrada */
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
 }
 
 /* ========================= */
@@ -369,10 +371,9 @@ footer {
     margin-bottom: 15px;
   }
 
-  .timeline-img img {
-    width: 160px;
-    height: 160px;
-  }
+.timeline-img img {
+  max-width: 170px;
+}
 
   .timeline-content {
     background: none;
