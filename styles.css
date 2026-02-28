@@ -493,7 +493,7 @@ footer {
 /* ========================= */
 
 .fade-item {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(40px);
   transition: all 1s ease;
 }
