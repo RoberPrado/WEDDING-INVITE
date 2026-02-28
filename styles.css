@@ -333,7 +333,10 @@ footer {
     align-items: flex-start;
     margin-left: 25px;
   }
-
+.timeline-item:nth-child(odd) .timeline-content,
+.timeline-item:nth-child(even) .timeline-content {
+  margin: 0;
+}
   .timeline-item::before {
     left: 10px;
     transform: none;
