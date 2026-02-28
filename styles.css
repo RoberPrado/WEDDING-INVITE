@@ -275,7 +275,7 @@ footer {
 }
 
 .timeline-content {
-  width: 50%;
+  width: 45%;
   background: white;
   padding: 30px;
   border-radius: 18px;
@@ -299,6 +299,21 @@ footer {
 .timeline-content p {
   font-size: 18px;
   color: #666;
+}
+.timeline-content {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  position: relative;
+}
+/* Separación del centro */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 40px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: 40px;
 }
 
 /* Alternar lados */
