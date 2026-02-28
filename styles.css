@@ -276,11 +276,11 @@ footer {
 }
 
 /* ========================= */
-/* IMAGEN MEJORADA */
+/* IMAGEN AJUSTADA MÁS PEQUEÑA */
 /* ========================= */
 
 .timeline-img {
-  width: 35%;
+  width: 28%; /* antes 35% */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,11 +288,11 @@ footer {
 
 .timeline-img img {
   width: 100%;
-  max-width: 240px;
-  aspect-ratio: 1 / 1;   /* Siempre cuadrada */
+  max-width: 190px;   /* antes 240px */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* ========================= */
@@ -372,7 +372,7 @@ footer {
   }
 
 .timeline-img img {
-  max-width: 170px;
+  max-width: 150px;
 }
 
   .timeline-content {
