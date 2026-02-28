@@ -488,3 +488,17 @@ footer {
   margin-top: 40px;
   color: #a38c7d;
 }
+/* ========================= */
+/* FADE SECCIÓN ROMÁNTICA */
+/* ========================= */
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
