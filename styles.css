@@ -620,3 +620,14 @@ footer {
   font-weight: 600;
   color: #c6a16e;
 }
+.section-dark button {
+  background: linear-gradient(135deg, #c6a16e, #b8925f);
+  color: white;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.section-dark button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
