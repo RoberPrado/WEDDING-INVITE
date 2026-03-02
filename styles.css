@@ -39,7 +39,14 @@ body {
   margin-top: 10px;
   letter-spacing: 2px;
 }
+.hero {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
 
+@keyframes heroZoom {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
 /* SECTIONS */
 
 section {
