@@ -193,26 +193,39 @@
 
 <!-- RSVP -->
 <section class="section-dark fade-in">
-  <h2>Confirmar Asistencia</h2>
+<h3 class="tickets-info">
+  Familia <span id="family-name">Invitado</span><br>
+  Tienen <span id="available-tickets">1</span> boletos disponibles
+</h3>
 
-  <form 
-    action="https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec"
-    method="POST"
-    target="hidden_iframe"
-    onsubmit="submitted=true;"
+<form 
+  action="https://script.google.com/macros/s/AKfycbzeT6nOj7vhQy6gQtXiKPb_6wcRJOe4fBKgfkJ0OwEXga_qLi8Xe70Jx8omzk-LLrTQ/exec"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
+>
+  <input type="hidden" name="family" id="family-input">
+  <input type="hidden" name="maxTickets" id="maxTickets-input">
+
+  <input type="text" name="name" placeholder="Nombre completo" required>
+
+  <select name="attendance" required>
+    <option value="">¿Asistirás?</option>
+    <option value="Sí asistiré">Sí asistiré</option>
+    <option value="No podré asistir">No podré asistir</option>
+  </select>
+
+  <input 
+    type="number" 
+    name="guests" 
+    id="guests"
+    placeholder="¿Cuántos boletos usarás?"
+    min="1"
+    required
   >
-    <input type="text" name="name" placeholder="Nombre completo" required>
 
-    <select name="attendance" required>
-      <option value="">¿Asistirás?</option>
-      <option value="Sí asistiré">Sí asistiré</option>
-      <option value="No podré asistir">No podré asistir</option>
-    </select>
-
-    <input type="number" name="guests" placeholder="Número de acompañantes">
-
-    <button type="submit">Confirmar</button>
-  </form>
+  <button type="submit">Confirmar</button>
+</form>
 
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 
@@ -336,6 +349,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Primer toque real (funciona mejor en móvil)
   document.addEventListener("pointerdown", startMusic, { once: true });
+</script>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+
+  const family = params.get("familia") || "Invitado";
+  const tickets = parseInt(params.get("boletos")) || 1;
+
+  document.getElementById("family-name").textContent = family;
+  document.getElementById("available-tickets").textContent = tickets;
+
+  document.getElementById("family-input").value = family;
+  document.getElementById("maxTickets-input").value = tickets;
+
+  const guestInput = document.getElementById("guests");
+  guestInput.max = tickets;
+
+  guestInput.addEventListener("input", function() {
+    if (this.value > tickets) {
+      this.value = tickets;
+    }
+  });
 </script>
 </body>
 </html>
