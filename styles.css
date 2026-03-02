@@ -593,3 +593,22 @@ footer {
   50% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
+.music-hint {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 998;
+}
+
+.music-hint.hide {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
