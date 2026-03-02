@@ -681,7 +681,7 @@ footer {
 }
 h2 {
   position: relative;
-  margin-bottom: 5px; /* espacio controlado */
+  margin-bottom: 1px; /* espacio controlado */
 }
 
 h2::after {
@@ -689,6 +689,6 @@ h2::after {
   display: block;
   width: 380px;     /* más grande */
   height: 185px;     /* más grande */
-  margin: -25px auto 0;  /* más pegado al título */
+  margin: -45px auto 0;  /* más pegado al título */
   background: url("assets/hojas.png") center/contain no-repeat;
 }
