@@ -610,3 +610,13 @@ footer {
   transform: translateY(10px);
   pointer-events: none;
 }
+.tickets-info {
+  margin-bottom: 25px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.tickets-info span {
+  font-weight: 600;
+  color: #c6a16e;
+}
