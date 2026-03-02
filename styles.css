@@ -502,3 +502,48 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+.padrinos-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #faf8f5;
+}
+
+.padrinos-title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.padrinos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.padrino-item {
+  max-width: 280px;
+}
+
+.padrino-role {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #888;
+}
+
+.padrino-names {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .padrinos-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
