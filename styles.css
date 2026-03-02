@@ -681,7 +681,7 @@ footer {
 }
 h2 {
   position: relative;
-  margin-bottom: 25px; /* espacio controlado */
+  margin-bottom: 10px; /* espacio controlado */
 }
 
 h2::after {
