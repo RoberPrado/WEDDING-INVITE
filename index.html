@@ -293,9 +293,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
   <!-- MUSICA -->
- <audio id="bg-music" loop>
+<audio id="bg-music" loop>
   <source src="music/nuestra-cancion.mp3" type="audio/mpeg">
 </audio>
+
+<div class="music-hint" id="music-hint">
+  Toca para escuchar nuestra canción ♫
+</div>
 
 <button class="music-toggle" onclick="toggleMusic()">
   ♫
@@ -304,6 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
   const music = document.getElementById("bg-music");
   const button = document.querySelector(".music-toggle");
+  const hint = document.getElementById("music-hint");
 
   let musicStarted = false;
 
@@ -312,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
       music.play().then(() => {
         musicStarted = true;
         button.classList.add("playing");
+        hint.classList.add("hide");
       }).catch(() => {});
     }
   }
@@ -320,17 +326,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (music.paused) {
       music.play();
       button.classList.add("playing");
+      hint.classList.add("hide");
     } else {
       music.pause();
       button.classList.remove("playing");
     }
   }
 
-  // Se activa al primer toque
-  document.addEventListener("click", startMusic, { once: true });
-
-  // Se activa al primer scroll
-  document.addEventListener("scroll", startMusic, { once: true });
+  // Primer toque real (funciona mejor en móvil)
+  document.addEventListener("pointerdown", startMusic, { once: true });
 </script>
 </body>
 </html>
