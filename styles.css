@@ -687,8 +687,8 @@ h2 {
 h2::after {
   content: "";
   display: block;
-  width: 280px;     /* más grande */
-  height: 85px;     /* más grande */
+  width: 380px;     /* más grande */
+  height: 185px;     /* más grande */
   margin: 4px auto 0;  /* más pegado al título */
   background: url("assets/hojas.png") center/contain no-repeat;
 }
