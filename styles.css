@@ -15,13 +15,18 @@ body {
 /* HERO */
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh; /* mejora en móviles modernos */
+
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-              url('assets/DSC_2007.webp') center/cover no-repeat;
+              url('assets/DSC_2007.webp') center center / cover no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+
+  animation: heroZoom 20s ease-in-out infinite alternate;
 }
 
 .hero-content h1 {
@@ -39,14 +44,7 @@ body {
   margin-top: 10px;
   letter-spacing: 2px;
 }
-.hero {
-  animation: heroZoom 20s ease-in-out infinite alternate;
-}
 
-@keyframes heroZoom {
-  from { background-size: 100%; }
-  to { background-size: 110%; }
-}
 /* SECTIONS */
 
 section {
