@@ -688,11 +688,8 @@ h2 {
 h2::after {
   content: "";
   display: block;
-  width: 200px; /* tamaño del adorno */
-  height: 60px; /* altura del espacio */
-  margin: 15px auto 0;
-  background-image: url("assets/hojas.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 220px;
+  aspect-ratio: 3 / 1;  /* mantiene proporción */
+  margin: 20px auto 0;
+  background: url("assets/hojas.png") center/contain no-repeat;
 }
