@@ -292,5 +292,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+  <audio id="bg-music" loop>
+  <source src="music/nuestra-cancion.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-toggle" onclick="toggleMusic()">
+  ♫
+</button>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const button = document.querySelector(".music-toggle");
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      button.classList.add("playing");
+    } else {
+      music.pause();
+      button.classList.remove("playing");
+    }
+  }
+</script>
 </body>
 </html>
