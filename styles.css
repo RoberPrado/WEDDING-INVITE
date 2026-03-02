@@ -545,5 +545,10 @@ footer {
   .padrinos-grid {
     flex-direction: column;
     gap: 40px;
+  align-items: center; /* 👈 esto faltaba */
+  }
+
+  .padrino-item {
+    text-align: center;
   }
 }
