@@ -637,3 +637,12 @@ footer {
   height: auto;
   margin-top: 20px;
 }
+.dress-note {
+  margin-top: 25px;
+  padding: 12px 20px;
+  display: inline-block;
+  font-size: 0.95rem;
+  border-top: 1px solid #c6a16e;
+  border-bottom: 1px solid #c6a16e;
+  color: #555;
+}
