@@ -292,7 +292,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-  <audio id="bg-music" loop>
+  <!-- MUSICA -->
+ <audio id="bg-music" loop>
   <source src="music/nuestra-cancion.mp3" type="audio/mpeg">
 </audio>
 
@@ -304,6 +305,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const music = document.getElementById("bg-music");
   const button = document.querySelector(".music-toggle");
 
+  let musicStarted = false;
+
+  function startMusic() {
+    if (!musicStarted) {
+      music.play().then(() => {
+        musicStarted = true;
+        button.classList.add("playing");
+      }).catch(() => {});
+    }
+  }
+
   function toggleMusic() {
     if (music.paused) {
       music.play();
@@ -313,6 +325,12 @@ document.addEventListener("DOMContentLoaded", function () {
       button.classList.remove("playing");
     }
   }
+
+  // Se activa al primer toque
+  document.addEventListener("click", startMusic, { once: true });
+
+  // Se activa al primer scroll
+  document.addEventListener("scroll", startMusic, { once: true });
 </script>
 </body>
 </html>
