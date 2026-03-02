@@ -679,3 +679,20 @@ footer {
   color: #c6a16e;
   font-weight: 600;
 }
+h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 120px; /* tamaño del adorno */
+  height: 30px; /* altura del espacio */
+  margin: 15px auto 0;
+  background-image: url("assets/hojas.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
