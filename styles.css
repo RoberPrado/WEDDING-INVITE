@@ -731,4 +731,21 @@ h2::after {
   background: #333;
   color: white;
 }
+.dress-list {
+  list-style: none;
+  padding-left: 0;
+}
 
+.dress-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 18px;
+}
+
+.dress-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #bfa46f; /* dorado suave opcional */
+  font-size: 20px;
+}
